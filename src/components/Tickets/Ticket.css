@@ -1,0 +1,21 @@
+.tickets-container {
+    display: grid;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 7fr;
+    grid-template-columns: 2fr 7fr;
+    width: 40%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 4px auto;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    height: auto;
+}
+
+.ticket-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 5fr 2fr 5fr;
+    grid-template-columns: 5fr 2fr 5fr;
+}
