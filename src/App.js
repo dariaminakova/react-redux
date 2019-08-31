@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-import SideBar from './components/SideBar';
-import TicketsContainer from './components/Tickets/TicketsContainer';
+import SideBar from './components/SideBar/SideBar';
+import TicketsScreen from './containers/TicketsContainer';
 
 class App extends Component {
 
   render(){
 
-  const {tickets} = this.props;
-
   return (
     <div className="App">
       <SideBar />
-      <TicketsContainer tickets={tickets}/>
+      <TicketsScreen />
     </div>
   );}
 };
