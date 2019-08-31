@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-const TICKETS_LOAD = '../../tickets.json';
+const TICKETS_LOAD = 'http://localhost:3000/tickets.json';
 
 class TicketsService {
 
   async getDefaultSubreddits() {
-    const url = {TICKETS_LOAD};
+    const url = TICKETS_LOAD;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
