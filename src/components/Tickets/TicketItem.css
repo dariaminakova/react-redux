@@ -27,3 +27,27 @@
     justify-content: flex-start;
     align-content: center;
 }
+
+.buyTicket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buyTicket img{
+    max-width: 60px;
+}
+
+.button {
+    background-color: rgb(214, 66, 115);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 36px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

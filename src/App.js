@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import SideBar from './components/SideBar/SideBar';
 import TicketsScreen from './containers/TicketsContainer';
 
 class App extends Component {
@@ -9,7 +8,6 @@ class App extends Component {
 
   return (
     <div className="App">
-      <SideBar />
       <TicketsScreen />
     </div>
   );}

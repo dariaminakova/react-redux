@@ -11,8 +11,9 @@ class TicketItem extends Component {
         return (
             <div className="item">
                 <div className='buyTicket'>
+                    <img src='https://gitlab.smissltd.com/svv1313/aviasalesreact/raw/master/images/dddb6e70e25fdd6553238ce7aecfa37661376fbb.png' alt='carrier'></img>
                     <p>{carrier}</p>
-                    <button> Купить за {price} </button>
+                    <button className='button'> Купить за {price} </button>
                 </div>
                 <div className='infoTicket'>
                     <div>

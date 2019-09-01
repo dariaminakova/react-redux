@@ -1,6 +1,7 @@
 import * as types from './actionTypes';
 import redditService from '../services/reddit';
 
+
 export function fetchTickets() {
   return async(dispatch) => {
     try {
@@ -12,4 +13,10 @@ export function fetchTickets() {
       console.error(error);
     }
   };
+}
+
+export function changeFilter(newFilter) {
+  return({ 
+    type: types.FILTER_CHANGED, 
+    filter: newFilter });
 }

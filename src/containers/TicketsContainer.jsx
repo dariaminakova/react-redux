@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as ticketsActions from '../store/actions';
-import * as topicsSelectors from '../store/reducer';
+import * as ticketsSelectors from '../store/reducer';
 import TicketsView from '../components/Tickets/TicketsView';
+import SideBar from '../components/SideBar/SideBar'
+
+import './TicketsContainer.css'
 
 class TicketsScreen extends Component {
 
@@ -13,7 +16,9 @@ class TicketsScreen extends Component {
   render() {
     if (!this.props.tickets) return this.renderLoading();
     return (
-      <div className="TicketsScreen">
+      <div className="ticketsScreen">
+        <SideBar
+            />
         <TicketsView tickets={this.props.tickets}/>
       </div>
     );
@@ -21,15 +26,16 @@ class TicketsScreen extends Component {
 
   renderLoading() {
     return (
-      <p>Loading...</p>
+      <p>  Loading...  </p>
     );
   }
 }
 
 function mapStateToProps(state) {
     return {
-      tickets: topicsSelectors.getTicketsArray(state)
+      tickets: ticketsSelectors.getTicketsArray(state),
+      currentFilter: ticketsSelectors.getCurrentFilter(state),
     };
   }
-  
+
   export default connect(mapStateToProps)(TicketsScreen);
