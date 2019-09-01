@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as ticketsActions from '../store/action';
+import * as ticketsActions from '../store/actions';
 import * as topicsSelectors from '../store/reducer';
 import TicketsView from '../components/Tickets/TicketsView';
 

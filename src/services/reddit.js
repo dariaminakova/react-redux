@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-const TICKETS_LOAD = 'http://localhost:3000/tickets.json';
+const TICKETS_LOAD = 'http://localhost:3000/';
 
 class TicketsService {
 
   async getDefaultSubreddits() {
-    const url = TICKETS_LOAD;
+    const url = `${TICKETS_LOAD}tickets.json`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
@@ -13,7 +13,7 @@ class TicketsService {
       }
     });
     if (!response.ok) {
-      throw new Error(`Failed to load tickets.json`);
+      throw new Error(`Failed to load tickets.json ${response.status}`);
     }
     const data = await response.json();
     const children = _.get(data, 'data.children');

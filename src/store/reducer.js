@@ -7,14 +7,19 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 
 const initialState = Immutable({
-    ticketsByPrice: undefined,
+    tickets: undefined,
+    currentFilter: 'без пересадок'
 });
 
 export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
     case types.TICKETS_FETCHED:
         return state.merge({
-            ticketsByPrice: action.ticketsByPrice
+          tickets: action.tickets
+      });
+    case types.FILTER_CHANGED:
+        return state.merge({
+          currentFilter: action.filter
         });
     default:
       return state;
@@ -27,6 +32,6 @@ export function getTicketsArray(state) {
   return state.tickets;
 }
 
-// export function getTicketsByStops(state) {
-//   return _.keys(state.tickets.spops);
-// }
+export function changeFilter(newFilter) {
+  return({ type: types.FILTER_CHANGED, filter: newFilter });
+}
