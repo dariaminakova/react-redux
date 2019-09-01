@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const TICKETS_LOAD = 'http://localhost:3000/';
 
 class TicketsService {
@@ -15,29 +13,10 @@ class TicketsService {
     if (!response.ok) {
       throw new Error(`Failed to load tickets.json ${response.status}`);
     }
-    const data = await response.json();
-    const children = _.get(data, 'data.children');
-    if (!children) {
-      throw new Error(`Children not returned`);
-    }
-    return _.map(children, (subreddit) => {
-      // abstract away the specifics of the reddit API response and take only the fields we care about
-      return {
-        origin: _.get(subreddit, 'data.origin'),
-        origin_name: _.get(subreddit, 'data.origin_name'),
-        destination: _.get(subreddit, 'data.destination'),
-        destination_name: _.get(subreddit, 'data.destination_name'),
-        departure_date: _.get(subreddit, 'data.departure_date'),
-        departure_time: _.get(subreddit, 'data.departure_time'),
-        arrival_date: _.get(subreddit, 'data.arrival_date'),
-        arrival_time: _.get(subreddit, 'data.arrival_time'),
-        carrier: _.get(subreddit, 'data.carrier'),
-        stops: _.get(subreddit, 'data.stops'),
-        price: _.get(subreddit, 'data.price')
-      }
-    });
-  }
 
+    const data = await response.json();
+    return (data.tickets) 
+  }
 }
 
 export default new TicketsService();

@@ -11,13 +11,10 @@ class TicketsScreen extends Component {
   }
 
   render() {
-    if (!this.props.rowsById) return this.renderLoading();
+    if (!this.props.tickets) return this.renderLoading();
     return (
       <div className="TicketsScreen">
-        <TicketsView
-          rowsIdArray={this.props.rowsIdArray}
-          rowsById={this.props.rowsById}
-          renderRow={this.renderRow} />
+        <TicketsView tickets={this.props.tickets}/>
       </div>
     );
   }
@@ -27,21 +24,11 @@ class TicketsScreen extends Component {
       <p>Loading...</p>
     );
   }
-
-  renderRow(row) {
-    return (
-      <div>
-        <h3>{row.title}</h3>
-        <p>{row.description}</p>
-      </div>
-    )
-  }
-
 }
 
 function mapStateToProps(state) {
     return {
-      rowsById: topicsSelectors.getTicketsArray(state),
+      tickets: topicsSelectors.getTicketsArray(state)
     };
   }
   

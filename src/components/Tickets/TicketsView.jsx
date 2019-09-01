@@ -1,21 +1,17 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 
 export default class TicketsView extends Component {
 
   render() {
+
+    const {tickets} = this.props;
+    console.log("tickets:", tickets)
+
     return (
       <ul>
-        {_.map(this.props.rowsIdArray, this.renderRowById.bind(this))}
+        <li>
+        </li>
       </ul>
-    );
-  }
-
-  renderRowById(rowId) {
-    return (
-      <li key={rowId}>
-        {this.props.renderRow(_.get(this.props.rowsById, rowId))}
-      </li>
     );
   }
 

@@ -1,13 +1,13 @@
-import _ from 'lodash';
 import * as types from './actionTypes';
 import redditService from '../services/reddit';
 
 export function fetchTickets() {
-  return async(dispatch, getState) => {
+  return async(dispatch) => {
     try {
-      const subredditArray = await redditService.getDefaultSubreddits();
-      const ticketsByPrice = _.keyBy(subredditArray, (subreddit) => subreddit.price);
-      dispatch({ type: types.TICKETS_FETCHED, ticketsByPrice });
+      const ticketsArray = await redditService.getDefaultSubreddits();
+      dispatch({ 
+        type: types.TICKETS_FETCHED, 
+        ticketsByPrice: ticketsArray });
     } catch (error) {
       console.error(error);
     }
