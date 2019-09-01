@@ -1,0 +1,29 @@
+.item {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 7fr;
+    grid-template-columns: 2fr 7fr;
+    grid-gap: 2vw;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 12px;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.infoTicket {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4fr 1fr 4fr;
+    grid-template-columns: 4fr 1fr 4fr;
+    grid-gap: 1vw;
+}
+
+.ticketList{
+    margin-left: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
