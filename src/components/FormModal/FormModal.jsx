@@ -45,7 +45,7 @@ class FormModal extends Component {
                 fieldValidationErrors.email = emailValid ? '' : ' Введите почту в формате name@mail.com ';
                 break;
               case 'phone':
-                phoneValid = value.length >= 9;
+                phoneValid = value.match (/^\d{3}\s\d{3}\s\d{2}\s\d{2}$/);
                 fieldValidationErrors.phone = phoneValid ? '': ' Введите номер телефона в формате 0** *** ** **';
                 break;
             case 'firstname':
@@ -111,7 +111,7 @@ class FormModal extends Component {
                     <div className='formGroup'>
                     <label htmlFor='firstname'> Имя </label>
                     <input 
-                        type='firstname' 
+                        type='text' 
                         className='formControl' 
                         name='firstname' 
                         value={this.state.firstname}
@@ -120,7 +120,7 @@ class FormModal extends Component {
                     <div className='formGroup'>
                     <label htmlFor='secondname'> Фамилия </label>
                     <input 
-                        type='secondname' 
+                        type='text' 
                         className='formControl' 
                         name='secondname' 
                         value={this.state.secondname}
@@ -129,7 +129,7 @@ class FormModal extends Component {
                     <div className='formGroup'>
                     <label htmlFor='passportnumber'> Номер паспорта </label>
                     <input 
-                        type='passportnumber' 
+                        type='text' 
                         className='formControl' 
                         name='passportnumber' 
                         value={this.state.passportnumber}
