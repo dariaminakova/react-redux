@@ -17,8 +17,7 @@ class TicketsScreen extends Component {
     if (!this.props.tickets) return this.renderLoading();
     return (
       <div className="ticketsScreen">
-        <SideBar
-            />
+        <SideBar />
         <TicketsView tickets={this.props.tickets}/>
       </div>
     );

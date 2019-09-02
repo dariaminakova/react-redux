@@ -1,8 +1,8 @@
 .item {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2fr 7fr;
-    grid-template-columns: 2fr 7fr;
+    -ms-grid-columns: 2fr 6fr;
+    grid-template-columns: 2fr 6fr;
     grid-gap: 2vw;
     border: 0.5px solid gray;
     border-radius: 10px;
@@ -18,14 +18,11 @@
     -ms-grid-columns: 4fr 1fr 4fr;
     grid-template-columns: 4fr 1fr 4fr;
     grid-gap: 1vw;
+    text-align: center;
 }
 
 .ticketList{
-    margin-left: 12%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+    margin-left: 8%;
 }
 
 .buyTicket {
@@ -50,4 +47,13 @@
 
 .button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.time{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.point{
+    font-size: 20px;
 }

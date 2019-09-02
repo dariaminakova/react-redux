@@ -6,7 +6,6 @@ class SideBar extends Component {
 
 render(){
 
-
     let filterTicketsByStops = (e) => {
         e = e.target.value;
     }

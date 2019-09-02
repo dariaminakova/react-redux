@@ -26,7 +26,7 @@ export default function reduce(state = initialState, action = {}) {
   }
 }
 
-// selectors
+// selectors 
 
 export function getTicketsArray(state) {
   if (state.tickets.ticketsByPrice.length) {
